@@ -400,7 +400,7 @@ boolean tryLock(long time, TimeUnit unit) throws InterruptedException : 超时�
 
 void unLock(): 释放锁，总是应该释放锁，
     
-Condition newCondition(): 获取等待通知组件，该组件和当前所绑定，当前线程只有获得了锁，才能调用wait() 方法后，调用后释放锁。
+Condition newCondition(): 获取等待通知组件，该组件和当前所绑定，当前线程只有获得了锁，才能调用wait() 方法，调用后释放锁。
     调用。
 ```
 
