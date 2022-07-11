@@ -1,5 +1,7 @@
 # Redis
 
+![img](D:\project\笔记\数据库\pic\70a5bc1ddc9e3579a2fcb8a5d44118b4.jpeg)
+
 ## 键值对数据库
 
 ![image-20220414194541998](D:\project\笔记\数据库\pic\redis数据库结构.png)
