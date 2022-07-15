@@ -703,3 +703,8 @@ PROPAGATE的产生是源于jdk1.6的bug导致，队列中存在两个以上线�
 
 
 ![image-20220411165550511](D:\project\笔记\并发\pic\1.6bug.jpg)
+
+## `ThreadLocal`
+
+ThreadLocal一半作为操作`ThreadLocalMap`中`Entry`的键，是操作线程私有数据的入口。一般设置为弱引用，即在下一次GC时删除。这是为了方式`ThreadLocal`的生命周期与线程一致，对于线程池之类生命周期很长的线程来说尤为致命。但是`Entry`的值依然是强引用，虽然`ThreadLocalMap`会自动清理那些已经被回收的`ThreadLocal`对应的值，但是这种清理依赖于接下来的调用，并不可靠。所以有发生内存泄漏的风险。使用`ThreadLocal`的最佳实践是使用完之后就立即`remove`。
+
